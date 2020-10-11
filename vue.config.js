@@ -1,0 +1,22 @@
+module.exports={
+  //根据命令执行dev或prod找到不同的入口文件，并且如果是开发环境，通过externals加载外部cdn资源优化
+  //具体步骤查看vue黑马视频
+  //性能优化问题参考视频n
+  chainWebpack:config=>{
+    config.when(process.env.NODE_ENV==='production',config=>{
+      config.entry('app').clear().add('./src/main-prod.js')
+      config.set('externals',{
+        vue:'Vue',
+        'vue-router':'VueRouter',
+        axios:'axios',
+        lodash:'_',
+        echarts:'echarts',
+        nprogress:'NProgress',
+        'vue-quill-editor':'vueQuillEditor'
+      })
+    })
+    config.when(process.env.NODE_ENV==='development',config=>{
+      config.entry('app').clear().add('./src/main-dev.js')
+    })
+  }
+}

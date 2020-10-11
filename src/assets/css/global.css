@@ -1,0 +1,37 @@
+html,body,#app{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* 一般我们需要为body设定一个最小宽度来防止当窗口宽度过小时导致样式变形 */
+  min-width: 1366px;
+  
+}
+.el-breadcrumb{
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+.el-card{
+  /* element自带的样式权重会比较高，如果私有样式没有生效需要添加！important进行强制覆盖 */
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .15) !important;
+}
+.el-table{
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.el-pagination{
+  margin-top: 15px;
+}
+
+.el-steps{
+  margin: 15px 15px;
+}
+
+.el-step__title{
+  font-size: 13px;
+
+}
+
+.ql-editor{
+  min-height: 400px;
+}
